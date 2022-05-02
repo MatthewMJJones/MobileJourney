@@ -1,5 +1,7 @@
 package za.ac.cput.screens
 
+
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -7,6 +9,8 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -29,7 +33,7 @@ fun Start(navController: NavHostController) {
             modifier = Modifier.padding(
                 top = 16.dp,
                 bottom = 16.dp),
-            fontSize = 60.sp
+            fontSize = 30.sp
         )
 
         btnIcon()
@@ -37,11 +41,18 @@ fun Start(navController: NavHostController) {
         Button(
             modifier = Modifier.padding(20.dp),
             shape = CircleShape,
+            border = BorderStroke(2.dp, Color.Black),
             onClick = {
                 navController.navigate(Navigation.Journey.route)
-            }) {
+            },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = Color.LightGray,
+                contentColor = Color.Black
+            )
+
+        ) {
             Text(text = "Journey",
-            fontSize = 20.sp,
+            fontSize = 25.sp,
             modifier = Modifier.padding(start = 10.dp)
             )
             Image(painter = painterResource(id = R.drawable.ic_baseline_arrow_forward_24),
@@ -62,9 +73,14 @@ fun btnIcon()
     Button(
         modifier = Modifier.padding(20.dp),
         shape = CircleShape,
+        border = BorderStroke(2.dp, Color.Black),
         onClick = {
             dialogState = true
-        }
+        },
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color.LightGray,
+            contentColor = Color.Black
+        )
     )
     {
         Text(text = "Info",
