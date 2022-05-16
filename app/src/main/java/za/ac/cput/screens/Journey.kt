@@ -63,7 +63,7 @@ fun Journey(navController: NavHostController)
             shape = CircleShape,
             border = BorderStroke(2.dp, Color.Black),
             onClick = {
-
+                navController.navigate(Navigation.Courses.route)
             },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.LightGray,

@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import za.ac.cput.screens.Courses
 import za.ac.cput.screens.Start
 import za.ac.cput.screens.Journey
 
@@ -34,6 +35,10 @@ fun MainScreen()
 
         composable(Navigation.Journey.route) {
             Journey(navController = navController)
+        }
+
+        composable(Navigation.Courses.route){
+            Courses(navController = navController)
         }
     }
 }
